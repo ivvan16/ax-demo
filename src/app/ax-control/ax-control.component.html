@@ -1,0 +1,16 @@
+<label class="label">{{title}}</label>
+<form [class.input-error]="isInvalid">
+  <ng-content select="input"></ng-content>
+  <button *ngIf="!isInvalid && form.value"
+          class="clear-icon"
+          type="reset">
+  </button>
+</form>
+<div *ngIf="isInvalid"
+     class="error-container">
+  <div *ngFor="let error of form.errors | keyvalue"
+       class="error">
+    {{validationMap[error.key]}}
+  </div>
+</div>
+

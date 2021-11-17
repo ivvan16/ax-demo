@@ -1,0 +1,72 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin-bottom: 25px;
+}
+
+.label {
+  margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+::ng-deep input {
+  height: 30px;
+  width: 200px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: grey;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+::ng-deep input:disabled {
+  background-color: transparent !important;
+}
+
+::ng-deep input:hover {
+  background-color: rgba(232, 236, 241, 0.5 );
+}
+
+::ng-deep input:focus {
+  outline: none !important;
+  border: 2px solid #5E9ED6;
+}
+
+.clear-icon {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  background-image: url('../../assets/icons/clear.svg') !important;
+  border: 1px solid transparent;
+  background-color: transparent;
+  vertical-align: middle;
+  left: -30px;
+}
+
+::ng-deep input:not(:valid) ~ .clear-icon {
+  display: none;
+}
+
+.input-error ::ng-deep input {
+  border: 2px solid #DC143C !important;
+  background-image: url('../../assets/icons/warning.svg') !important;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-origin: content-box;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.error {
+  color: #DC143C;
+  font-size: 10px;
+}
